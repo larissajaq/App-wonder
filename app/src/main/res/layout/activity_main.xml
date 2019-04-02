@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom">
+
+    <android.support.design.widget.FloatingActionButton
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:clickable="true" app:srcCompat="@drawable/ic_config"
+            android:id="@+id/floatingActionButton"
+            android:onClick="ClickButton2"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="32dp"
+            android:layout_marginRight="32dp"
+            android:layout_alignParentRight="true" app:backgroundTint="@color/colorAccent"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+
+    <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".MainActivity">
+
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" app:srcCompat="@drawable/biblioteca_back"
+                android:id="@+id/image_biblioteca_back" app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" android:scaleType="centerCrop"/>
+
+        <ImageView
+                android:layout_width="wrap_content"
+                app:srcCompat="@drawable/top"
+                android:id="@+id/image_biblioteca_top" app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintTop_toTopOf="parent" android:layout_height="220dp" android:scaleType="fitCenter"/>
+        <TextView
+                android:text="Biblioteca"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/title_biblioteca"
+                app:fontFamily="@font/roboto_bold" android:textColor="@android:color/background_light"
+                android:textSize="24sp" android:textStyle="bold" android:textAllCaps="true"
+                android:letterSpacing="0.3" android:layout_marginTop="75dp" app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="8dp" app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginLeft="8dp" android:layout_marginEnd="8dp" app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginRight="8dp" app:layout_constraintHorizontal_bias="0.498"/>
+
+        <android.support.v7.widget.CardView
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:layout_width="180dp"
+                android:layout_height="368dp"
+                android:layout_marginTop="80dp"
+                app:layout_constraintTop_toBottomOf="@+id/title_biblioteca" android:id="@+id/cardPeter"
+                app:layout_constraintStart_toEndOf="@+id/cardPorquinhos"
+                app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginLeft="8dp" android:layout_marginStart="8dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                card_view:cardCornerRadius="12dp"
+                card_view:cardElevation="8dp"
+        >
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" app:srcCompat="@drawable/peterpan"
+                    android:id="@+id/image_peterpan" android:scaleType="fitStart"/>
+            <TextView
+                    android:text="Peter Pan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/title_peterpan"
+                    android:textAllCaps="true" app:fontFamily="@font/roboto_bold" android:textSize="18sp"
+                    android:layout_marginTop="195dp" android:layout_marginRight="8dp" android:layout_marginLeft="8dp"
+                    app:layout_constraintStart_toEndOf="@+id/image_tresporquinhos"
+                    android:textColor="@color/colorText"
+                    android:gravity="center"/>
+            <TextView
+                    android:text="Peter Pan, um garoto que nunca cresce, visita a casa de Wendy e seus irmãos e os convida a ir a Terra do Nunca, onde vivem grandes aventuras."
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:id="@+id/text_peterpan"
+                    android:textAllCaps="false" app:fontFamily="@font/roboto_regular" android:textSize="14sp"
+                    android:layout_marginTop="230dp" android:layout_marginRight="8dp" android:layout_marginLeft="8dp"
+                    app:layout_constraintStart_toEndOf="@+id/title_porquinhos"
+                    android:textColor="@color/colorText"
+                    android:gravity="fill_horizontal"/>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:layout_width="180dp"
+                android:layout_height="368dp"
+                android:layout_marginTop="80dp"
+                app:layout_constraintTop_toBottomOf="@+id/title_biblioteca" android:id="@+id/cardPorquinhos"
+                app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp" app:layout_constraintStart_toEndOf="@+id/image_biblioteca_back"
+                app:layout_constraintEnd_toStartOf="@+id/cardPeter" app:layout_constraintHorizontal_bias="0.5"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                card_view:cardCornerRadius="12dp"
+                card_view:cardElevation="8dp">
+
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" app:srcCompat="@drawable/tresporquinhos"
+                    android:id="@+id/image_tresporquinhos" android:scaleType="fitStart"/>
+            <TextView
+                    android:text="Os três porquinhos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/title_porquinhos"
+                    android:textAllCaps="true" app:fontFamily="@font/roboto_bold" android:textSize="18sp"
+                    android:layout_marginTop="195dp" android:layout_marginRight="8dp" android:layout_marginLeft="8dp"
+                    app:layout_constraintStart_toEndOf="@+id/image_tresporquinhos"
+                    android:textColor="@color/colorText"
+                    android:gravity="center"/>
+            <TextView
+                    android:text="Três porquinhos decidem construir suas casas de diferentes materiais, mas o lobo mau logo aparece para tentar derruba-las e eles devem fugir."
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:id="@+id/text_porquinhos"
+                    android:textAllCaps="false" app:fontFamily="@font/roboto_regular" android:textSize="14sp"
+                    android:layout_marginTop="250dp" android:layout_marginRight="8dp" android:layout_marginLeft="8dp"
+                    app:layout_constraintStart_toEndOf="@+id/title_porquinhos"
+                    android:textColor="@color/colorText"
+                    android:gravity="fill_horizontal"/>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:layout_width="180dp"
+                android:layout_height="368dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@+id/cardPorquinhos" android:id="@+id/cardCinderela"
+                app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp" app:layout_constraintStart_toEndOf="@+id/image_biblioteca_back"
+                app:layout_constraintEnd_toStartOf="@+id/cardAladdin" app:layout_constraintHorizontal_bias="0.0"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                card_view:cardCornerRadius="12dp"
+                card_view:cardElevation="8dp">
+
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" app:srcCompat="@drawable/cinderela"
+                    android:id="@+id/image_cinderela" android:scaleType="fitStart"/>
+            <TextView
+                    android:text="Cinderela"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/title_cinderela"
+                    android:textAllCaps="true" app:fontFamily="@font/roboto_bold" android:textSize="18sp"
+                    android:layout_marginTop="195dp" android:layout_marginRight="8dp" android:layout_marginLeft="8dp"
+                    app:layout_constraintStart_toEndOf="@+id/image_cinderela"
+                    android:textColor="@color/colorText"
+                    android:gravity="center"/>
+            <TextView
+                    android:text="Cinderela é sempre maltratada pela madrasta e irmãs.Com a ajuda de sua fada madrinha, ela vai ao baile do príncipe, mas tem que fugir antes da meia noite."
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:id="@+id/text_cinderela"
+                    android:textAllCaps="false" app:fontFamily="@font/roboto_regular" android:textSize="14sp"
+                    android:layout_marginTop="230dp" android:layout_marginRight="8dp" android:layout_marginLeft="8dp"
+                    app:layout_constraintStart_toEndOf="@+id/title_cinderela"
+                    android:textColor="@color/colorText"
+                    android:gravity="fill_horizontal"/>
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:layout_width="180dp"
+                android:layout_height="368dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@+id/cardPeter" android:id="@+id/cardAladdin"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                card_view:cardCornerRadius="12dp"
+                card_view:cardElevation="8dp"
+                app:layout_constraintStart_toEndOf="@+id/cardCinderela"
+                android:layout_marginEnd="8dp" app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginRight="8dp">
+
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" app:srcCompat="@drawable/aladdin"
+                    android:id="@+id/image_aladdin" android:scaleType="fitStart"/>
+            <TextView
+                    android:text="Aladdin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/title_aladdin"
+                    android:textAllCaps="true" app:fontFamily="@font/roboto_bold" android:textSize="18sp"
+                    android:layout_marginTop="195dp" android:layout_marginRight="8dp" android:layout_marginLeft="8dp"
+                    app:layout_constraintStart_toEndOf="@+id/image_peterpan"
+                    android:textColor="@color/colorText"
+                    android:gravity="center"/>
+            <TextView
+                    android:text="Um garoto pobre encontra uma lâmpada mágica com um gênio que pode realizar seus desejos e torna-lo um príncipe."
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:id="@+id/text_aladdin"
+                    android:textAllCaps="false" app:fontFamily="@font/roboto_regular" android:textSize="14sp"
+                    android:layout_marginTop="230dp" android:layout_marginRight="8dp" android:layout_marginLeft="8dp"
+                    app:layout_constraintStart_toEndOf="@+id/title_aladdin"
+                    android:textColor="@color/colorText"
+                    android:gravity="fill_horizontal"/>
+        </android.support.v7.widget.CardView>
+
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>
+</RelativeLayout>

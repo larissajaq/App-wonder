@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Livro">
+
+    <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="412dp" app:srcCompat="@drawable/tresporquinhos"
+            android:id="@+id/imageView" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" android:scaleType="centerCrop"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+    <android.support.v7.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:layout_width="411dp"
+            android:layout_height="369dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+            card_view:cardCornerRadius="10dp" card_view:cardElevation="8dp">
+
+        <TextView
+                android:id="@+id/tv_pass"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+        />
+        <TextView
+                android:id="@+id/tv_duration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+        />
+        <TextView
+                android:id="@+id/tv_due"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+        />
+        <SeekBar
+                android:id="@+id/seek_bar"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_pass"
+                android:saveEnabled="false"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="56dp"
+                android:layout_marginRight="32dp"
+                android:layout_marginLeft="32dp"
+        />
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="90dp"
+                android:layout_marginRight="32dp"
+                android:layout_marginLeft="32dp"
+        >
+            <Button
+                    android:id="@+id/button_stop"
+                    android:layout_width="177dp"
+                    android:layout_height="wrap_content"
+                    android:text="Stop"
+                    android:enabled="false"
+                    tools:layout_editor_absoluteY="442dp" tools:layout_editor_absoluteX="7dp"/>
+            <Button
+                    android:id="@+id/button_play"
+                    android:layout_width="184dp"
+                    android:layout_height="wrap_content"
+                    android:text="Start"
+                    tools:layout_editor_absoluteY="429dp" tools:layout_editor_absoluteX="94dp"/>
+        </LinearLayout>
+        <ScrollView
+                android:layout_width="411dp"
+                android:layout_height="369dp"
+                android:layout_marginTop="150dp"
+        >
+            <TextView
+                    android:layout_width="369dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/texto_porquinhos"
+                    app:fontFamily="@font/roboto_regular"
+                    android:textColor="@color/colorText"
+                    android:lineSpacingMultiplier="1.6"
+                    android:gravity="center"
+                    android:textSize="22sp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginLeft="16dp"/>
+        </ScrollView>
+
+        <TextView
+                android:text="Os três porquinhos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/title_porquinhos"
+                android:textAllCaps="true" app:fontFamily="@font/roboto_bold" android:textSize="18sp"
+                android:layout_marginTop="16dp" android:layout_marginRight="8dp" android:layout_marginLeft="8dp"
+                app:layout_constraintStart_toEndOf="@+id/image_tresporquinhos"
+                android:textColor="@color/colorText"
+                android:gravity="center"/>
+    </android.support.v7.widget.CardView>
+</android.support.constraint.ConstraintLayout>
