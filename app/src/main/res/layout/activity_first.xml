@@ -18,8 +18,8 @@
             android:textColor="@android:color/background_light" android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginRight="8dp" android:layout_marginStart="8dp"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="8dp"
-            android:layout_marginBottom="296dp"
-            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintHorizontal_bias="0.496"
+            android:layout_marginBottom="300dp"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintHorizontal_bias="0.495"
             android:gravity="center"/>
     <Button
             android:text="Vamos lá"
