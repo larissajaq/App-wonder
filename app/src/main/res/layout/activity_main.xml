@@ -69,8 +69,8 @@
                 android:foreground="?android:attr/selectableItemBackground"
                 android:clickable="true"
                 card_view:cardCornerRadius="12dp"
-                card_view:cardElevation="8dp"
-        >
+                card_view:cardElevation="8dp">
+
             <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" app:srcCompat="@drawable/peterpan"

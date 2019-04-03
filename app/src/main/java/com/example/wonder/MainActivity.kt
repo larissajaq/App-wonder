@@ -22,14 +22,14 @@ class MainActivity : AppCompatActivity() {
     private val clickListener: View.OnClickListener = View.OnClickListener { view ->
         when (view.id) {
             R.id.cardPorquinhos -> ClickLivro()
-            R.id.cardPeter -> ClickToast()
+            R.id.cardPeter -> ClickToast(view)
         }
     }
     private fun ClickLivro() {
         val intent = Intent(this, Livro::class.java)
         startActivity(intent)
     }
-    fun ClickToast() {
+    fun ClickToast(view: View) {
         val text = "Em breve"
         val duration = Toast.LENGTH_SHORT
         val toast = Toast.makeText(applicationContext, text, duration)
