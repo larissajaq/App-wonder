@@ -22,6 +22,7 @@ class Config : AppCompatActivity() {
             Toast.makeText(this@Config, "Data Retrieved", Toast.LENGTH_SHORT).show()
         } else {
             button_background = 1
+            sharedPreference.save("intval", 1)
             Toast.makeText(this@Config, "Data Retrie", Toast.LENGTH_SHORT).show()
         }
 
