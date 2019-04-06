@@ -24,7 +24,7 @@ class First : AppCompatActivity() {
         preference = getSharedPreferences("IntroSlider" , Context.MODE_PRIVATE)
 
         if(!preference.getBoolean(pref_show_intro,true)){
-            startActivity(Intent(activity,MainActivity::class.java))
+            startActivity(Intent(activity, Bluetooth::class.java))
             finish()
         }
 
@@ -33,7 +33,7 @@ class First : AppCompatActivity() {
     }
 
     fun goToMainPage(){
-        startActivity(Intent(activity,MainActivity::class.java))
+        startActivity(Intent(activity,Bluetooth::class.java))
         finish()
         val editor = preference.edit()
         editor.putBoolean(pref_show_intro,false)
