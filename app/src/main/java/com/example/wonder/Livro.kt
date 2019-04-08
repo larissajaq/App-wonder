@@ -29,7 +29,15 @@
             val vento: Int = sharedPreference.getValueInt("intvalvento")
             val toque: Int = sharedPreference.getValueInt("intvaltoque")
 
-            if (vibrar == 1 || vento == 1 || toque ==1 ) {
+            /* A - LIGA SERVO MOTOR
+              B - LIGA VIBRAR
+              C - DESLIGA VIBRAR
+              D - LIGA VENTO
+              E - DELIGA VENTO
+              F - DESLIGA SERVO MOTOR
+           */
+
+            if (vibrar == 1 || vento == 1 || toque == 1 ) {
 
                 if (vibrar == 1 && vento == 1 && toque == 1) {
 
@@ -75,14 +83,6 @@
 
             }
 
-
-            /* A - LIGA SERVO MOTOR
-               B - LIGA VIBRAR
-               C - DESLIGA VIBRAR
-               D - LIGA VENTO
-               E - DELIGA VENTO
-               F - DESLIGA SERVO MOTOR
-            */
 
            /* val readWriteMap = hashMapOf(118 to 'A', 120 to 'F', 143 to 'B', 144 to 'D', 145 to 'C', 147 to 'E', 156 to 'A',
                 158 to 'F', 179 to 'D', 182 to 'E', 186 to 'D', 187 to 'B', 189 to 'E', 190 to 'C', 202 to 'D', 205 to 'E' )
