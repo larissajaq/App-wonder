@@ -142,9 +142,10 @@
                 if(tempoAcao.containsKey(tempoAtual))
                     comunicacaoBT.write(tempoAcao[tempoAtual]!!.toByte())//se tiver, manda o comando
 
-                tv_pass.text = "${mediaPlayer.currentSeconds} sec"
-                val diff = mediaPlayer.seconds - mediaPlayer.currentSeconds
-                tv_due.text = "$diff sec"
+                tv_pass.text = "${mediaPlayer.currentSeconds}s"
+                //val diff = mediaPlayer.seconds - mediaPlayer.currentSeconds
+                tv_due.text = "${mediaPlayer.seconds}s"
+                //tv_due.text = "$diff sec"
 
                 handler.postDelayed(runnable, 1000)
             }
