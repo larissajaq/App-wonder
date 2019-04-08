@@ -20,7 +20,7 @@ class SharedPreference(val context: Context) {
     }
     fun getValueInt(hey: String): Int {
 
-        return sharedPref.getInt(hey, 0)
+        return sharedPref.getInt(hey, 1)
     }
     fun clearSharedPreference() {
 

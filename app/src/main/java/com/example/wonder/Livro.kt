@@ -24,17 +24,69 @@
             super.onCreate(savedInstanceState)
             setContentView(R.layout.activity_livro)
 
+            val sharedPreference: SharedPreference = SharedPreference(this)
+            val vibrar: Int = sharedPreference.getValueInt("intval")
+            val vento: Int = sharedPreference.getValueInt("intvalvento")
+            val toque: Int = sharedPreference.getValueInt("intvaltoque")
 
-            /* A - SERVO MOTOR
+            if (vibrar == 1 || vento == 1 || toque ==1 ) {
+
+                if (vibrar == 1 && vento == 1 && toque == 1) {
+
+                    val readWriteMap = hashMapOf(118 to 'A', 120 to 'F', 144 to 'B', 143 to 'D', 146 to 'C', 147 to 'E', 156 to 'A',
+                        158 to 'F', 179 to 'D', 182 to 'E', 186 to 'D', 187 to 'B', 189 to 'E', 190 to 'C', 202 to 'D', 205 to 'E' )
+                    tempoAcao=HashMap(readWriteMap)
+
+                } else if (vibrar == 1 && vento == 1 && toque == 2){
+
+                    val readWriteMap = hashMapOf(144 to 'B', 143 to 'D', 146 to 'C', 147 to 'E',
+                        179 to 'D', 182 to 'E', 186 to 'D', 187 to 'B', 189 to 'E', 190 to 'C', 202 to 'D', 205 to 'E' )
+                    tempoAcao=HashMap(readWriteMap)
+
+                } else if (vibrar == 1 && vento == 2 && toque == 2) {
+
+                    val readWriteMap = hashMapOf(144 to 'B', 146 to 'C', 187 to 'B', 190 to 'C' )
+                    tempoAcao=HashMap(readWriteMap)
+
+                } else if (vibrar == 2 && vento == 2 && toque == 1) {
+
+                    val readWriteMap = hashMapOf(118 to 'A', 120 to 'F', 156 to 'A', 158 to 'F' )
+                    tempoAcao=HashMap(readWriteMap)
+
+                } else if (vibrar == 2 && vento == 1 && toque == 2) {
+
+                    val readWriteMap = hashMapOf(143 to 'D', 147 to 'E', 179 to 'D', 182 to 'E', 186 to 'D', 189 to 'E', 202 to 'D', 205 to 'E' )
+                    tempoAcao=HashMap(readWriteMap)
+
+                 } else if (vibrar == 1 && vento == 2 && toque == 1)  {
+
+                    val readWriteMap = hashMapOf(118 to 'A', 120 to 'F', 144 to 'B', 146 to 'C', 156 to 'A',
+                        158 to 'F', 187 to 'B', 190 to 'C')
+                    tempoAcao=HashMap(readWriteMap)
+
+                } else if (vibrar == 2 && vento == 1 && toque == 1)  {
+
+                    val readWriteMap = hashMapOf(118 to 'A', 120 to 'F', 144 to 'D', 147 to 'E', 156 to 'A',
+                        158 to 'F', 179 to 'D', 182 to 'E', 186 to 'D', 189 to 'E', 202 to 'D', 205 to 'E' )
+                    tempoAcao=HashMap(readWriteMap)
+
+                }
+
+
+            }
+
+
+            /* A - LIGA SERVO MOTOR
                B - LIGA VIBRAR
                C - DESLIGA VIBRAR
                D - LIGA VENTO
                E - DELIGA VENTO
+               F - DESLIGA SERVO MOTOR
             */
 
-            val readWriteMap = hashMapOf(118 to 'A', 144 to 'B', 144 to 'D', 146 to 'C', 146 to 'E', 156 to 'A',
-                179 to 'D', 182 to 'E', 187 to 'D', 187 to 'B', 190 to 'E', 190 to 'C', 202 to 'D', 205 to 'E' )
-            tempoAcao=HashMap(readWriteMap)
+           /* val readWriteMap = hashMapOf(118 to 'A', 120 to 'F', 143 to 'B', 144 to 'D', 145 to 'C', 147 to 'E', 156 to 'A',
+                158 to 'F', 179 to 'D', 182 to 'E', 186 to 'D', 187 to 'B', 189 to 'E', 190 to 'C', 202 to 'D', 205 to 'E' )
+            tempoAcao=HashMap(readWriteMap)*/
 
 
             // Start the media player
