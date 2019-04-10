@@ -26,6 +26,7 @@ class MainActivity : AppCompatActivity() {
     fun ClickLog(view: View) {
         Log.d("log", "clicked");
     }
+
     private val clickListener: View.OnClickListener = View.OnClickListener { view ->
         when (view.id) {
             R.id.cardPorquinhos -> this.ClickLivro()

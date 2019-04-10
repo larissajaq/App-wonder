@@ -13,28 +13,34 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity
-                android:name=".Main2Activity"
-                android:label="@string/title_activity_main2"
-                android:theme="@style/AppTheme.NoActionBar">
-        </activity>
-        <activity android:name=".Config">
+
+        <activity android:name=".Config"
+                  android:screenOrientation="portrait"
+        >
 
         </activity>
-        <activity android:name=".Bluetooth">
+        <activity android:name=".Bluetooth"
+                  android:screenOrientation="portrait"
+        >
         </activity>
-        <activity android:name=".SelecionarDispositivo">
+        <activity android:name=".SelecionarDispositivo"
+                  android:screenOrientation="portrait"
+        >
         </activity>
-        <activity android:name=".Livro">
+        <activity android:name=".Livro"
+                  android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".First">
+        <activity android:name=".First"
+                  android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+                  android:screenOrientation="portrait">
         </activity>
         <activity
                 android:name=".SplashActivity"
                 android:noHistory="true"
-                android:theme="@style/SplashTheme">
+                android:theme="@style/SplashTheme"
+                android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
