@@ -115,7 +115,6 @@
                     playBtn.isEnabled = true
                     pauseBtn.isEnabled = false
                     stopBtn.isEnabled = false
-                    Toast.makeText(this,"end",Toast.LENGTH_SHORT).show()
                 }
 
                 //Controla a comunicação com o bluetooth
@@ -140,7 +139,6 @@
                     playBtn.isEnabled = true
                     pauseBtn.isEnabled = false
                     stopBtn.isEnabled = true
-                    Toast.makeText(this,"media pause",Toast.LENGTH_SHORT).show()
                 }
             }
             // Stop the media player
@@ -158,7 +156,6 @@
                     stopBtn.isEnabled = false
                     tv_pass.text = ""
                     tv_due.text = ""
-                    Toast.makeText(this,"media stop",Toast.LENGTH_SHORT).show()
                 }
             }
 
