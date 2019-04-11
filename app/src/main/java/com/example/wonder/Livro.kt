@@ -195,7 +195,7 @@
 
                 tv_pass.text = "${mediaPlayer.currentSeconds / 60}s"
                 //val diff = mediaPlayer.seconds - mediaPlayer.currentSeconds
-                tv_due.text = "${mediaPlayer. /60 }s"
+                tv_due.text = "${mediaPlayer.seconds / 60}s"
                 //tv_due.text = "$diff sec"
 
 
