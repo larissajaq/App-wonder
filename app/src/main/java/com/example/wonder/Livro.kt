@@ -5,8 +5,8 @@
     import android.support.v7.app.AppCompatActivity
     import android.os.Bundle
     import android.widget.SeekBar
-    import android.widget.Toast
     import android.os.Handler
+    import android.text.format.DateUtils
     import com.example.wonder.R
     import kotlinx.android.synthetic.main.activity_livro.*
     import java.lang.Exception
@@ -23,6 +23,8 @@
         override fun onCreate(savedInstanceState: Bundle?) {
             super.onCreate(savedInstanceState)
             setContentView(R.layout.activity_livro)
+
+            // Sincronização com o arduino
 
             val sharedPreference: SharedPreference = SharedPreference(this)
             val vibrar: Int = sharedPreference.getValueInt("intval")
@@ -80,16 +82,9 @@
 
                 }
 
-
             }
 
-
-           /* val readWriteMap = hashMapOf(118 to 'A', 120 to 'F', 143 to 'B', 144 to 'D', 145 to 'C', 147 to 'E', 156 to 'A',
-                158 to 'F', 179 to 'D', 182 to 'E', 186 to 'D', 187 to 'B', 189 to 'E', 190 to 'C', 202 to 'D', 205 to 'E' )
-            tempoAcao=HashMap(readWriteMap)*/
-
-
-            // Start the media player
+            // Start media player
             playBtn.setOnClickListener{
 
                 if(pause){
@@ -97,9 +92,7 @@
                     mediaPlayer.start()
                     pause = false
 
-
                 } else{
-
                     mediaPlayer = MediaPlayer.create(applicationContext,R.raw.audio_tres_porquinhos)
                     mediaPlayer.start()
 
@@ -117,6 +110,7 @@
                     stopBtn.isEnabled = false
                 }
 
+
                 //Controla a comunicação com o bluetooth
                 try {
                     //verifica se o fragmento já existe
@@ -125,13 +119,13 @@
                 }catch (e: Exception)
                 {
                     //cria o fragment caso ele não exista
-                    comunicacaoBT = ConexaoBluetooth();
+                    comunicacaoBT = ConexaoBluetooth()
                     supportFragmentManager.beginTransaction()
-                        .add(comunicacaoBT, "comunicacao_BT").commit();
+                        .add(comunicacaoBT, "comunicacao_BT").commit()
                 }
             }
 
-            // Pause the media player
+            // Pause media player
             pauseBtn.setOnClickListener {
                 if(mediaPlayer.isPlaying){
                     mediaPlayer.pause()
@@ -141,7 +135,8 @@
                     stopBtn.isEnabled = true
                 }
             }
-            // Stop the media player
+
+            // Stop media player
             stopBtn.setOnClickListener{
                 if(mediaPlayer.isPlaying || pause.equals(true)){
                     pause = false
@@ -174,15 +169,13 @@
                 }
             })
 
-
-
         }
 
 
-        // Method to initialize seek bar and audio stats
+        // Método para inicializar a seek bar e audio stats
         private fun initializeSeekBar() {
             seek_bar.max = mediaPlayer.seconds
-            var tempoAtual:Int;
+            var tempoAtual:Int
             runnable = Runnable {
                 tempoAtual= mediaPlayer.currentSeconds
                 seek_bar.progress = tempoAtual
@@ -192,13 +185,11 @@
                     comunicacaoBT.write(tempoAcao[tempoAtual]!!.toByte())//se tiver, manda o comando
 
 
+                /*tv_pass.text = "${mediaPlayer.currentSeconds}s"
+                  tv_due.text = "${mediaPlayer.seconds}s"*/
 
-                tv_pass.text = "${mediaPlayer.currentSeconds / 60}s"
-                //val diff = mediaPlayer.seconds - mediaPlayer.currentSeconds
-                tv_due.text = "${mediaPlayer.seconds / 60}s"
-                //tv_due.text = "$diff sec"
-
-
+                tv_pass.text = DateUtils.formatElapsedTime(mediaPlayer.currentPosition)
+                tv_due.text = DateUtils.formatElapsedTime(mediaPlayer.duration)
 
                 handler.postDelayed(runnable, 1000)
             }
@@ -208,16 +199,16 @@
 
 
 
-    // Extension property to get media player duration in seconds
+    // Propriedade para obter a duração do media player em segundos
     val MediaPlayer.seconds:Int
         get() {
             return this.duration / 1000
         }
 
 
-    // Extension property to get media player current position in seconds
+    // Propriedade para obter o tempo atual do media player em segundos
     val MediaPlayer.currentSeconds:Int
         get() {
-            return this.currentPosition/ 1000
+            return this.currentPosition / 1000
         }
 
