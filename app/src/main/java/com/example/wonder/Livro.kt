@@ -188,8 +188,8 @@
                 /*tv_pass.text = "${mediaPlayer.currentSeconds}s"
                   tv_due.text = "${mediaPlayer.seconds}s"*/
 
-                tv_pass.text = DateUtils.formatElapsedTime(mediaPlayer.currentPosition)
-                tv_due.text = DateUtils.formatElapsedTime(mediaPlayer.duration)
+                tv_pass.text = DateUtils.formatElapsedTime(mediaPlayer.currentSeconds.toLong())
+                tv_due.text = DateUtils.formatElapsedTime(mediaPlayer.seconds.toLong())
 
                 handler.postDelayed(runnable, 1000)
             }
