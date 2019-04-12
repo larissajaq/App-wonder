@@ -46,17 +46,6 @@
             android:onClick="btnLigarBluetoothClick"
             app:layout_constraintHorizontal_bias="0.497" android:layout_marginTop="32dp"
             app:layout_constraintTop_toBottomOf="@+id/text_bluetooth_two"/>
-    <Button
-            android:text="Pular"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="28dp"
-            android:id="@+id/button" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginLeft="8dp" android:layout_marginStart="8dp"
-            android:onClick="ClickPular"
-            app:layout_constraintHorizontal_bias="0.925" android:background="@android:color/transparent"
-            android:textSize="18sp" android:textColor="@android:color/background_light"/>
     <ImageView
             android:layout_width="125dp"
             android:layout_height="125dp" app:srcCompat="@drawable/ic_colete"

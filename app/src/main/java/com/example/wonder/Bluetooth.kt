@@ -26,10 +26,7 @@ class  Bluetooth : AppCompatActivity() {
             startActivity(novaIntent);
         }
     }
-    fun ClickPular(view: View) {
-        var intent: Intent = Intent(this, MainActivity::class.java)
-        startActivity(intent)
-    }
+
     fun btnLigarBluetoothClick(view: View)
     {
         if (mBluetoothAdapter == null) {
